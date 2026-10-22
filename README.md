@@ -54,7 +54,7 @@ server_files/                    client_files/
 4. `client.py` connects, prints the menu, and sends one command when you choose an item.
 5. Upload and download only touch the two storage folders. A file name cannot contain a folder path.
 
-The server listens on `127.0.0.1` only, so other computers cannot connect. You can still open as many clients as you like on your own Mac.
+The server listens on `127.0.0.1` only, so other computers cannot connect. You can still open as many clients as you like on the same computer.
 
 ## Folder structure
 
@@ -147,8 +147,10 @@ Limits, all in `protocol.py`:
 3. Go to the project folder:
 
    ```bash
-   cd /Users/dhruvi/Projects/Mini-FTP
+   cd path/to/Mini-FTP
    ```
+
+   Replace `path/to/Mini-FTP` with the folder where you saved or cloned this project.
 
 There is nothing to install.
 
@@ -157,7 +159,7 @@ There is nothing to install.
 In the first terminal:
 
 ```bash
-cd /Users/dhruvi/Projects/Mini-FTP
+cd path/to/Mini-FTP
 python3 server.py
 ```
 
@@ -177,7 +179,7 @@ The first optional argument is the port. The second is the folder where uploads 
 Open a **second** terminal:
 
 ```bash
-cd /Users/dhruvi/Projects/Mini-FTP
+cd path/to/Mini-FTP
 python3 client.py
 ```
 
@@ -247,7 +249,7 @@ Server terminal:
 
 ```
 Mini FTP server listening on 127.0.0.1:5001
-Storage folder: /Users/dhruvi/Projects/Mini-FTP/server_files
+Storage folder: /path/to/Mini-FTP/server_files
 Press Ctrl+C to stop.
 [127.0.0.1:51810] connected
 [127.0.0.1:51810] LIST
@@ -259,7 +261,7 @@ Press Ctrl+C to stop.
 [127.0.0.1:51810] disconnected
 ```
 
-The number after `127.0.0.1:` is the client’s temporary port. It will be different on your Mac. Press Ctrl+C and the server prints:
+The number after `127.0.0.1:` is the client’s temporary port. It changes every time a client connects. The storage path is the real path of `server_files` on that computer. Press Ctrl+C and the server prints:
 
 ```
 Stopping server...
@@ -270,7 +272,7 @@ Client terminal. The characters after each colon are what you type.
 
 ```
 Connected to 127.0.0.1:5001.
-Local folder: /Users/dhruvi/Projects/Mini-FTP/client_files
+Local folder: /path/to/Mini-FTP/client_files
 
 Mini FTP Client
 ----------------
@@ -314,7 +316,7 @@ Mini FTP Client
 Choose an option (1-4): 2
 File name to download: sample.txt
 Downloading sample.txt...
-Success: Downloaded sample.txt (79 bytes) to /Users/dhruvi/Projects/Mini-FTP/client_files/sample.txt (replaced existing file)
+Success: Downloaded sample.txt (79 bytes) to /path/to/Mini-FTP/client_files/sample.txt (replaced existing file)
 
 Mini FTP Client
 ----------------
@@ -344,7 +346,7 @@ If extra files are already in `client_files/`, the upload menu lists those too.
 From the project folder:
 
 ```bash
-cd /Users/dhruvi/Projects/Mini-FTP
+cd path/to/Mini-FTP
 python3 -m unittest test_mini_ftp.py -v
 ```
 
