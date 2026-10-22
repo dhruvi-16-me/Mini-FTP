@@ -1,0 +1,2 @@
+Hello from Mini FTP!
+This file is used to test uploading and downloading text.
